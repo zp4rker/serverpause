@@ -1,0 +1,7 @@
+name: serverpause
+version: '${version}'
+main: com.zp4rker.serverpause.Main
+api-version: 1.19
+authors: [ zp4rker ]
+description: Disable daylight cycle when no players are present
+website: https://github.com/zp4rker/serverpause
