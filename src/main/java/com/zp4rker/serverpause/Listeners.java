@@ -1,5 +1,6 @@
 package com.zp4rker.serverpause;
 
+import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,7 +12,7 @@ public class Listeners implements Listener {
     public void onLogin(PlayerLoginEvent event) {
         if (Boolean.FALSE.equals(event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE))) {
             event.getPlayer().getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
-            event.getPlayer().getServer().getLogger().info("Daylight cycle has been resumed");
+            Bukkit.getLogger().info("Daylight cycle has been resumed");
         }
     }
 
@@ -19,7 +20,7 @@ public class Listeners implements Listener {
     public void onLeave(PlayerQuitEvent event) {
         if (event.getPlayer().getServer().getOnlinePlayers().size() == 0) {
             event.getPlayer().getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
-            event.getPlayer().getServer().getLogger().info("Daylight cycle has been paused");
+            Bukkit.getLogger().info("Daylight cycle has been paused");
         }
     }
 }
