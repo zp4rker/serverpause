@@ -18,7 +18,7 @@ public class Listeners implements Listener {
 
     @EventHandler
     public void onLeave(PlayerQuitEvent event) {
-        if (event.getPlayer().getServer().getOnlinePlayers().size() == 0) {
+        if (event.getPlayer().getServer().getOnlinePlayers().size() == 1) {
             event.getPlayer().getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
             Bukkit.getLogger().info("Daylight cycle has been paused");
         }

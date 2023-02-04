@@ -7,6 +7,8 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getServer().getPluginManager().registerEvents(new Listeners(), this);
+
         if (getServer().getOnlinePlayers().size() == 0) {
             if (Boolean.TRUE.equals(getServer().getWorlds().get(0).getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE))) {
                 getServer().getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
